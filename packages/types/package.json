@@ -1,0 +1,18 @@
+{
+  "name": "@repo/types",
+  "private": true,
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "biome check .",
+    "clean": "biome check --write --no-errors-on-unmatched .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@orpc/server": "^1.13.5",
+    "@repo/api": "workspace:*"
+  }
+}

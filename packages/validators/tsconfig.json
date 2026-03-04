@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@repo/validators": ["./src/index.ts"],
+      "@repo/validators/*": ["./src/*"],
+      "@repo/db": ["../db/src/index.ts"],
+      "@repo/db/*": ["../db/src/*"]
+    }
+  },
+  "include": ["src"]
+}

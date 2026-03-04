@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@repo/assets": ["./src/index.ts"],
+      "@repo/assets/*": ["./src/*"]
+    }
+  },
+  "include": ["src"]
+}
