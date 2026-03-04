@@ -3,22 +3,29 @@ import "fumadocs-ui/style.css";
 import "@repo/ui/web/globals.css";
 import { Toaster } from "@repo/ui/web/components/ui/sonner";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, DM_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { QueryProvider } from "@/components/providers/QueryProvider";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+});
+
+const dmMono = DM_Mono({
+  weight: ["300", "400", "500"],
+  variable: "--font-dm-mono",
   subsets: ["latin"],
 });
 
 import SEOConfig, { metadataConfig } from "@/components/common/SEOConfig";
-
 export const metadata: Metadata = metadataConfig;
 
 export default function RootLayout({
@@ -28,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${bricolage.variable} ${jakarta.variable} ${dmMono.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
