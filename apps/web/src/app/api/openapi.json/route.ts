@@ -6,9 +6,10 @@ import { router } from "@repo/api";
  * Zod v4 uses a different internal structure than v3 and includes a built-in toJSONSchema method.
  */
 class ZodV4ToJsonSchemaConverter {
-  condition(schema: any): boolean {
+  condition(schema: unknown): boolean {
+    const s = schema as Record<string, any>;
     // Zod v4 schemas have a ~standard property with vendor "zod" and an internal _zod property.
-    return schema?.["~standard"]?.vendor === "zod" && !!schema._zod;
+    return s?.["~standard"]?.vendor === "zod" && !!s._zod;
   }
 
   async convert(schema: any, options: any): Promise<[boolean, any]> {
@@ -19,7 +20,7 @@ class ZodV4ToJsonSchemaConverter {
       target: options.target === "openapi-3.0" ? "openapi-3.0" : "draft-2020-12",
       io: options.strategy,
       unrepresentable: "any",
-      override: ({ zodSchema, jsonSchema }: any) => {
+      override: ({ zodSchema, jsonSchema }: { zodSchema: any; jsonSchema: any }) => {
         // Map Date objects to string with date-time format
         if (zodSchema._zod?.def?.type === "date") {
           jsonSchema.type = "string";
@@ -30,7 +31,7 @@ class ZodV4ToJsonSchemaConverter {
 
     // Remove $schema to prevent it from appearing in every component schema in the OpenAPI spec.
     if (json && typeof json === "object") {
-      delete (json as any).$schema;
+      delete (json as Record<string, unknown>).$schema;
     }
 
     // Determine if the schema is required.

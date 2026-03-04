@@ -32,7 +32,9 @@
       "@repo/utils": ["./packages/utils/src/index.ts"],
       "@repo/utils/*": ["./packages/utils/src/*"],
       "@repo/assets/*": ["./packages/assets/*"],
-      "@repo/ui/*": ["./packages/ui/src/*"]
+      "@repo/ui/*": ["./packages/ui/src/*"],
+      "@repo/scrapper": ["./packages/scrapper/src/index.ts"],
+      "@repo/scrapper/*": ["./packages/scrapper/src/*"]
     }
   },
   "exclude": ["node_modules"]

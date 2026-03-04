@@ -12,17 +12,18 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
-  const MDX = page.data.body;
+  const pageData = page.data as any;
+  const MDX = pageData.body;
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full}>
+    <DocsPage toc={pageData.toc} full={pageData.full}>
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
         <MDX
           components={{
             ...defaultMdxComponents,
-            pre: ({ ref: _ref, ...props }) => (
+            pre: ({ ref: _ref, ...props }: any) => (
               <CodeBlock {...props}>
                 <Pre>{props.children}</Pre>
               </CodeBlock>

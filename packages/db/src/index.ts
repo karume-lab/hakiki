@@ -1,4 +1,5 @@
 export * as schema from "@repo/db/schema";
+export * from "drizzle-orm";
 
 import { createClient } from "@libsql/client/node";
 import * as schema from "@repo/db/schema";

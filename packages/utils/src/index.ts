@@ -1,3 +1,7 @@
+import { customAlphabet } from "nanoid";
+
+export const nanoid = customAlphabet("abcdefghijklmnopqrstuvwxyz0123456789", 10);
+
 /**
  * Returns the base URL for the application.
  * Checks environment variables for Expo and Next.js, then falls back to
