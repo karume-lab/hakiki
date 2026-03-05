@@ -19,6 +19,13 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive/10 hover:bg-destructive/20 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/20 text-destructive focus-visible:border-destructive/40 dark:hover:bg-destructive/30",
         link: "text-primary underline-offset-4 hover:underline",
+        cta: [
+          "relative overflow-hidden border dark:bg-input/30 border-border bg-background text-foreground",
+          "before:absolute before:inset-0 before:-translate-x-full before:bg-foreground",
+          "before:transition-transform before:duration-300 before:ease-in-out before:-z-[-1]",
+          "hover:before:translate-x-0 hover:text-background",
+          "transition-colors duration-300",
+        ].join(" "),
       },
       size: {
         default:
