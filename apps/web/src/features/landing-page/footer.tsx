@@ -4,7 +4,7 @@ import Link from "next/link";
 const Footer = () => {
   const links = [
     { label: "Home", href: "/" },
-    { label: "Members", href: "/members" },
+    { label: "Politicians", href: "/politicians" },
     { label: "Report an Incident", href: "/" },
     { label: "Journalist Registration", href: "/" },
     { label: "Contact", href: "/" },

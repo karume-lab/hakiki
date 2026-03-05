@@ -1,5 +1,5 @@
 import { and, db, eq, isNull } from "@repo/db";
-import { candidate, constituency, party } from "@repo/db/schema";
+import { constituency, party, politician } from "@repo/db/schema";
 import { nanoid } from "@repo/utils";
 import { CONSTITUENCY_TO_COUNTY, KENYA_COUNTIES } from "./geo-data";
 
@@ -95,7 +95,7 @@ export class DbSync {
     return inserted[0]?.id ?? null;
   }
 
-  async upsertCandidate(data: {
+  async upsertPolitician(data: {
     mzalendoId: string;
     fullName: string;
     partyId: string | null;
@@ -104,13 +104,13 @@ export class DbSync {
     image?: string;
   }): Promise<string> {
     // 1. Check by mzalendoId (primary key for Mzalendo sync)
-    const existingById = await db.query.candidate.findFirst({
-      where: eq(candidate.mzalendoId, data.mzalendoId),
+    const existingById = await db.query.politician.findFirst({
+      where: eq(politician.mzalendoId, data.mzalendoId),
     });
 
     if (existingById) {
       await db
-        .update(candidate)
+        .update(politician)
         .set({
           fullName: data.fullName,
           partyId: data.partyId,
@@ -119,36 +119,36 @@ export class DbSync {
           image: data.image ?? existingById.image,
           updatedAt: new Date(),
         })
-        .where(eq(candidate.id, existingById.id));
+        .where(eq(politician.id, existingById.id));
       return existingById.id;
     }
 
     // FIX 2: Deduplication for nominated MPs (no constituency)
     // If no constituency, check if same full_name exists WITHOUT a constituency
     if (!data.constituencyId) {
-      const existingByName = await db.query.candidate.findFirst({
+      const existingByName = await db.query.politician.findFirst({
         where: and(
-          eq(candidate.fullName, data.fullName),
-          isNull(candidate.constituencyId),
-          eq(candidate.position, data.position),
+          eq(politician.fullName, data.fullName),
+          isNull(politician.constituencyId),
+          eq(politician.position, data.position),
         ),
       });
 
       if (existingByName) {
         // Link the mzalendoId to this existing record if it wasn't there
         await db
-          .update(candidate)
+          .update(politician)
           .set({
             mzalendoId: data.mzalendoId,
             updatedAt: new Date(),
           })
-          .where(eq(candidate.id, existingByName.id));
+          .where(eq(politician.id, existingByName.id));
         return existingByName.id;
       }
     }
 
-    const id = `can_${nanoid()}`;
-    await db.insert(candidate).values({
+    const id = `pol_${nanoid()}`;
+    await db.insert(politician).values({
       id,
       mzalendoId: data.mzalendoId,
       fullName: data.fullName,

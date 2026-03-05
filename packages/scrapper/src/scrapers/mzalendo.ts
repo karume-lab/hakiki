@@ -1,7 +1,7 @@
 import * as cheerio from "cheerio";
-import { DbSync } from "../lib/db-sync";
-import { DocumentStore } from "../lib/document-store";
-import { HttpClient } from "../lib/http-client";
+import { DbSync } from "@/lib/db-sync";
+import { DocumentStore } from "@/lib/document-store";
+import { HttpClient } from "@/lib/http-client";
 
 const DISCOVERY_ENDPOINTS = [
   {
@@ -44,7 +44,7 @@ export class MzalendoScraper {
 
       // Phase 2: Upsert each person into the DB
       for (const person of people) {
-        await this.syncCandidate(person);
+        await this.syncPolitician(person);
         await this.delay(RATE_LIMIT_MS);
       }
 
@@ -174,7 +174,7 @@ export class MzalendoScraper {
     return people;
   }
 
-  private async syncCandidate(person: DiscoveredPerson): Promise<void> {
+  private async syncPolitician(person: DiscoveredPerson): Promise<void> {
     const url = `${this.baseUrl}/person/${person.slug}/`;
 
     if (await this.store.isAlreadyProcessed(url)) {
@@ -193,7 +193,7 @@ export class MzalendoScraper {
         person.countyName,
       );
 
-      const candidateId = await this.dbSync.upsertCandidate({
+      const politicianId = await this.dbSync.upsertPolitician({
         mzalendoId: person.slug,
         fullName: person.fullName,
         partyId,
@@ -205,7 +205,7 @@ export class MzalendoScraper {
         source: "Mzalendo",
         url,
         status: "parsed",
-        candidateId,
+        politicianId,
       });
     } catch (error) {
       console.error(`Failed to sync ${person.fullName}:`, error);

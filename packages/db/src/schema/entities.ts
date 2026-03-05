@@ -44,7 +44,7 @@ export const sourceDocument = sqliteTable("source_document", {
   filename: text("filename"),
   hash: text("hash"),
   status: text("status").notNull(), // discovered, downloaded, parsed, error
-  candidateId: text("candidate_id").references(() => candidate.id),
+  politicianId: text("politician_id").references(() => politician.id),
   metadata: text("metadata"), // JSON string for extra info
   createdAt: integer("createdAt", { mode: "timestamp" }).notNull(),
   updatedAt: integer("updatedAt", { mode: "timestamp" }).notNull(),

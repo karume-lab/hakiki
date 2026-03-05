@@ -3,8 +3,8 @@ import FeaturesSection from "@/features/landing-page/features-section";
 import Footer from "@/features/landing-page/footer";
 import HeroSection from "@/features/landing-page/hero-section";
 import ModulesSection from "@/features/landing-page/modules-section";
+import { PoliticianSection } from "@/features/landing-page/politician-section";
 import ProblemSection from "@/features/landing-page/problem-section";
-import { MembersSection } from "../../features/landing-page/member-section";
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
 
       <main className="flex-1 w-full mx-auto">
         <HeroSection />
-        <MembersSection />
+        <PoliticianSection />
         <ProblemSection />
         <ModulesSection />
         <FeaturesSection />
