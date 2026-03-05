@@ -19,13 +19,13 @@ const twitterImage = async (): Promise<ImageResponse> => {
         {/* biome-ignore lint/performance/noImgElement: required for next/og */}
         <img
           src={logoBase64}
-          alt="HackJS Logo"
+          alt="Hakiki Logo"
           width="200"
           height="200"
           style={{ marginBottom: "40px" }}
         />
-        <h1 tw="text-8xl font-bold mb-4">HackJS</h1>
-        <p tw="text-3xl text-gray-400">The Ultimate Monorepo Stack</p>
+        <h1 tw="text-8xl font-bold mb-4">Hakiki</h1>
+        <p tw="text-3xl text-gray-400">Tracking Political Finance in Kenya</p>
       </div>
     </div>,
     {

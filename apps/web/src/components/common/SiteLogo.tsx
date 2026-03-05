@@ -5,7 +5,7 @@ import Image from "next/image";
 const SiteLogo = ({ className }: { className?: string }) => {
   return (
     <Image
-      alt="HackJS Logo"
+      alt="Hakiki Logo"
       src={Logo}
       className={cn("rounded-2xl bg-black dark:bg-transparent", className)}
       style={{ height: "100%", width: "auto" }}

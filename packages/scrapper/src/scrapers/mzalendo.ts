@@ -1,7 +1,7 @@
+import { DbSync } from "@repo/scrapper/lib/db-sync";
+import { DocumentStore } from "@repo/scrapper/lib/document-store";
+import { HttpClient } from "@repo/scrapper/lib/http-client";
 import * as cheerio from "cheerio";
-import { DbSync } from "@/lib/db-sync";
-import { DocumentStore } from "@/lib/document-store";
-import { HttpClient } from "@/lib/http-client";
 
 const DISCOVERY_ENDPOINTS = [
   {

@@ -8,7 +8,7 @@ const Footer = () => {
     { label: "Report an Incident", href: "/" },
     { label: "Journalist Registration", href: "/" },
     { label: "Contact", href: "/" },
-  ];
+  ] as const;
 
   return (
     <footer className="bg-black text-white border-t-0">

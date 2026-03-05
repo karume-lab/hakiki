@@ -1,5 +1,5 @@
-import { DbSync } from "@/lib/db-sync";
-import { DocumentStore } from "@/lib/document-store";
+import { DbSync } from "@repo/scrapper/lib/db-sync";
+import { DocumentStore } from "@repo/scrapper/lib/document-store";
 import governorsSeed from "./governors-seed.json";
 
 interface GovernorRecord {

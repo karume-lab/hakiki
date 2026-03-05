@@ -3,7 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@repo/scrapper/*": ["./src/*"]
     }
   },
   "include": ["src/**/*.ts"],
