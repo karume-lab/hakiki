@@ -1,6 +1,6 @@
 import { DbSync } from "@repo/scrapper/lib/db-sync";
 import { DocumentStore } from "@repo/scrapper/lib/document-store";
-import governorsSeed from "./governors-seed.json";
+import governorsSeed from "@repo/scrapper/scrapers/governors-seed.json";
 
 interface GovernorRecord {
   fullName: string;
