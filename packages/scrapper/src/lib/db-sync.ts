@@ -1,7 +1,7 @@
 import { and, db, eq, isNull } from "@repo/db";
 import { constituency, party, politician } from "@repo/db/schema";
+import { CONSTITUENCY_TO_COUNTY, KENYA_COUNTIES } from "@repo/scrapper/lib/geo-data";
 import { nanoid } from "@repo/utils";
-import { CONSTITUENCY_TO_COUNTY, KENYA_COUNTIES } from "./geo-data";
 
 export class DbSync {
   async upsertParty(name: string, slug: string): Promise<string | null> {
@@ -66,9 +66,15 @@ export class DbSync {
       }
     }
 
-    const existing = await db.query.constituency.findFirst({
+    let existing = await db.query.constituency.findFirst({
       where: eq(constituency.name, name),
     });
+
+    if (!existing) {
+      // Try normalized match against all constituencies in DB to catch naming variations
+      const all = await db.query.constituency.findMany();
+      existing = all.find((c) => normalize(c.name) === normalizedName);
+    }
 
     if (existing) {
       // Back-fill county if it was previously Unknown or if we have a better one now

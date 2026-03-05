@@ -1,4 +1,4 @@
-import { CogScraper, MzalendoScraper } from "@repo/scrapper";
+import { CogScraper, IebcScraper, MzalendoScraper } from "@repo/scrapper";
 
 async function main() {
   console.log("-------------------");
@@ -21,6 +21,15 @@ async function main() {
     console.log("COG sync completed.");
   } catch (error) {
     console.error("COG sync failed:", error);
+  }
+
+  // Phase 3: IEBC Spending Limits sync
+  console.log("Triggering IEBC sync...");
+  try {
+    await new IebcScraper().run();
+    console.log("IEBC sync completed.");
+  } catch (error) {
+    console.error("IEBC sync failed:", error);
   }
 
   // --- Scheduled Jobs ---

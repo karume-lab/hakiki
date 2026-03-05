@@ -76,3 +76,16 @@ export const sourceDocumentRelations = relations(sourceDocument, ({ one }) => ({
     references: [politician.id],
   }),
 }));
+
+export const spendingLimit = sqliteTable("spending_limit", {
+  id: text("id").primaryKey(),
+  constituencyId: text("constituency_id").references(() => constituency.id),
+  entityName: text("entity_name").notNull(),
+  entityType: text("entity_type").notNull(), // 'county' | 'constituency'
+  areaSqKm: integer("area_sq_km"),
+  registeredVoters: integer("registered_voters"),
+  limitKes: integer("limit_kes").notNull(),
+  year: integer("year").notNull(),
+  createdAt: integer("createdAt", { mode: "timestamp" }).notNull(),
+  updatedAt: integer("updatedAt", { mode: "timestamp" }).notNull(),
+});
