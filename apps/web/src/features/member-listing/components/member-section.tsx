@@ -32,7 +32,7 @@ export const MembersSection = () => {
         {/* See More — spans full row */}
         {remaining > 0 && (
           <div className="col-span-1 sm:col-span-2 lg:col-span-3 xl:col-span-4">
-            <Link href="/members" className="w-full">
+            <Link href={"/members" as any} className="w-full">
               <Button
                 variant="ghost"
                 className="w-full rounded-none h-14 gap-3 border border-border border-t-0 text-sm font-medium tracking-wide group/btn"

@@ -2,6 +2,7 @@ export * from "./config";
 export * from "./lib/document-store";
 export * from "./lib/http-client";
 export * from "./lib/pdf-parser";
+export * from "./scrapers/cog";
 export * from "./scrapers/gazette";
 export * from "./scrapers/iebc";
 export * from "./scrapers/mzalendo";

@@ -1,30 +1,26 @@
-import { MzalendoScraper } from "@repo/scrapper";
-
-// import {
-//   GazetteScraper,
-//   IebcScraper,
-//   OrppScraper,
-//   scraperConfig,
-// } from "@repo/scrapper";
-// import cron from "node-cron";
-
-/**
- * Main Entry Point
- * Orchestrates immediate triggers and scheduled cron jobs.
- */
+import { CogScraper, MzalendoScraper } from "@repo/scrapper";
 
 async function main() {
   console.log("-------------------");
   console.log("Scraper app started");
   console.log("-------------------");
 
-  // Trigger Mzalendo immediately for initial sync/test
-  console.log("Triggering immediate Mzalendo check...");
+  // Phase 1: Mzalendo MP sync
+  console.log("Triggering Mzalendo sync...");
   try {
     await new MzalendoScraper().run();
-    console.log("Initial Mzalendo check completed.");
+    console.log("Mzalendo check completed.");
   } catch (error) {
-    console.error("Initial Mzalendo check failed:", error);
+    console.error("Mzalendo check failed:", error);
+  }
+
+  // Phase 2: COG Governor sync
+  console.log("Triggering COG sync...");
+  try {
+    await new CogScraper().run();
+    console.log("COG sync completed.");
+  } catch (error) {
+    console.error("COG sync failed:", error);
   }
 
   // --- Scheduled Jobs ---

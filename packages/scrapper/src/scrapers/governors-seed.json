@@ -1,0 +1,331 @@
+[
+  {
+    "fullName": "Abdulswamad Sherrif Nassir",
+    "county": "Mombasa",
+    "party": "Orange Democratic Movement",
+    "slug": "abdulswamad-nassir",
+    "countyCode": "001"
+  },
+  {
+    "fullName": "Fatuma Mohamed Achani",
+    "county": "Kwale",
+    "party": "United Democratic Alliance",
+    "slug": "fatuma-achani",
+    "countyCode": "002"
+  },
+  {
+    "fullName": "Gideon Mung'aro",
+    "county": "Kilifi",
+    "party": "Orange Democratic Movement",
+    "slug": "gideon-mungaro",
+    "countyCode": "003"
+  },
+  {
+    "fullName": "Dhadho Godhana",
+    "county": "Tana River",
+    "party": "Orange Democratic Movement",
+    "slug": "dhadho-godhana",
+    "countyCode": "004"
+  },
+  {
+    "fullName": "Issa Timamy",
+    "county": "Lamu",
+    "party": "Amani National Congress",
+    "slug": "issa-timamy",
+    "countyCode": "005"
+  },
+  {
+    "fullName": "Andrew Mwadime",
+    "county": "Taita Taveta",
+    "party": "Independent",
+    "slug": "andrew-mwadime",
+    "countyCode": "006"
+  },
+  {
+    "fullName": "Nathif Jama Adam",
+    "county": "Garissa",
+    "party": "Orange Democratic Movement",
+    "slug": "nathif-adam",
+    "countyCode": "007"
+  },
+  {
+    "fullName": "Ahmed Abdullahi Jiir",
+    "county": "Wajir",
+    "party": "Orange Democratic Movement",
+    "slug": "ahmed-abdullahi",
+    "countyCode": "008"
+  },
+  {
+    "fullName": "Mohamed Adan Khalif",
+    "county": "Mandera",
+    "party": "United Democratic Movement",
+    "slug": "mohamed-khalif",
+    "countyCode": "009"
+  },
+  {
+    "fullName": "Mohamud Ali Guyo",
+    "county": "Marsabit",
+    "party": "Jubilee Party",
+    "slug": "mohamud-ali-guyo",
+    "countyCode": "010"
+  },
+  {
+    "fullName": "Abdi Ibrahim Hassan Guyo",
+    "county": "Isiolo",
+    "party": "Jubilee Party",
+    "slug": "abdi-guyo",
+    "countyCode": "011"
+  },
+  {
+    "fullName": "Kawira Mwangaza",
+    "county": "Meru",
+    "party": "Independent",
+    "slug": "kawira-mwangaza",
+    "countyCode": "012"
+  },
+  {
+    "fullName": "Muthomi Njuki",
+    "county": "Tharaka-Nithi",
+    "party": "United Democratic Alliance",
+    "slug": "muthomi-njuki",
+    "countyCode": "013"
+  },
+  {
+    "fullName": "Cecily Mutitu Mbarire",
+    "county": "Embu",
+    "party": "United Democratic Alliance",
+    "slug": "cecily-mbarire",
+    "countyCode": "014"
+  },
+  {
+    "fullName": "Dr. Julius Makau Malombe",
+    "county": "Kitui",
+    "party": "Wiper Democratic Movement - Kenya",
+    "slug": "julius-malombe",
+    "countyCode": "015"
+  },
+  {
+    "fullName": "Wavinya Ndeti",
+    "county": "Machakos",
+    "party": "Wiper Democratic Movement - Kenya",
+    "slug": "wavinya-ndeti",
+    "countyCode": "016"
+  },
+  {
+    "fullName": "Mutula Kilonzo Jnr.",
+    "county": "Makueni",
+    "party": "Wiper Democratic Movement - Kenya",
+    "slug": "mutula-kilonzo",
+    "countyCode": "017"
+  },
+  {
+    "fullName": "Moses Badilisha Kiarie",
+    "county": "Nyandarua",
+    "party": "United Democratic Alliance",
+    "slug": "moses-kiarie",
+    "countyCode": "018"
+  },
+  {
+    "fullName": "Mutahi Kahiga",
+    "county": "Nyeri",
+    "party": "United Democratic Alliance",
+    "slug": "mutahi-kahiga",
+    "countyCode": "019"
+  },
+  {
+    "fullName": "Anne Waiguru",
+    "county": "Kirinyaga",
+    "party": "United Democratic Alliance",
+    "slug": "anne-waiguru",
+    "countyCode": "020"
+  },
+  {
+    "fullName": "Irungu Kang'ata",
+    "county": "Murang'a",
+    "party": "United Democratic Alliance",
+    "slug": "irungu-kangata",
+    "countyCode": "021"
+  },
+  {
+    "fullName": "Dr. Kimani Wamatangi",
+    "county": "Kiambu",
+    "party": "United Democratic Alliance",
+    "slug": "kimani-wamatangi",
+    "countyCode": "022"
+  },
+  {
+    "fullName": "Jeremiah Lomorukai",
+    "county": "Turkana",
+    "party": "Orange Democratic Movement",
+    "slug": "jeremiah-lomorukai",
+    "countyCode": "023"
+  },
+  {
+    "fullName": "Simon Kachapin",
+    "county": "West Pokot",
+    "party": "United Democratic Alliance",
+    "slug": "simon-kachapin",
+    "countyCode": "024"
+  },
+  {
+    "fullName": "Jonathan Lati Leleliit",
+    "county": "Samburu",
+    "party": "United Democratic Alliance",
+    "slug": "jonathan-leleliit",
+    "countyCode": "025"
+  },
+  {
+    "fullName": "George Natembeya",
+    "county": "Trans Nzoia",
+    "party": "Democratic Action Party of Kenya",
+    "slug": "george-natembeya",
+    "countyCode": "026"
+  },
+  {
+    "fullName": "Jonathan Bii",
+    "county": "Uasin Gishu",
+    "party": "United Democratic Alliance",
+    "slug": "jonathan-bii",
+    "countyCode": "027"
+  },
+  {
+    "fullName": "Wisley Rotich",
+    "county": "Elgeyo Marakwet",
+    "party": "United Democratic Alliance",
+    "slug": "wisley-rotich",
+    "countyCode": "028"
+  },
+  {
+    "fullName": "Stephen Sang",
+    "county": "Nandi",
+    "party": "United Democratic Alliance",
+    "slug": "stephen-sang",
+    "countyCode": "029"
+  },
+  {
+    "fullName": "Benjamin Cheboi",
+    "county": "Baringo",
+    "party": "United Democratic Alliance",
+    "slug": "benjamin-cheboi",
+    "countyCode": "030"
+  },
+  {
+    "fullName": "Joshua Irungu",
+    "county": "Laikipia",
+    "party": "United Democratic Alliance",
+    "slug": "joshua-irungu",
+    "countyCode": "031"
+  },
+  {
+    "fullName": "Susan Kihika",
+    "county": "Nakuru",
+    "party": "United Democratic Alliance",
+    "slug": "susan-kihika",
+    "countyCode": "032"
+  },
+  {
+    "fullName": "Patrick Ole Ntutu",
+    "county": "Narok",
+    "party": "United Democratic Alliance",
+    "slug": "patrick-ntutu",
+    "countyCode": "033"
+  },
+  {
+    "fullName": "Joseph Ole Lenku",
+    "county": "Kajiado",
+    "party": "Orange Democratic Movement",
+    "slug": "joseph-lenku",
+    "countyCode": "034"
+  },
+  {
+    "fullName": "Dr. Erick Kipkoech Mutai",
+    "county": "Kericho",
+    "party": "United Democratic Alliance",
+    "slug": "erick-mutai",
+    "countyCode": "035"
+  },
+  {
+    "fullName": "Hillary Barchok",
+    "county": "Bomet",
+    "party": "United Democratic Alliance",
+    "slug": "hillary-barchok",
+    "countyCode": "036"
+  },
+  {
+    "fullName": "Fernandes Barasa",
+    "county": "Kakamega",
+    "party": "Orange Democratic Movement",
+    "slug": "fernandes-barasa",
+    "countyCode": "037"
+  },
+  {
+    "fullName": "Dr. Wilber Ottichilo",
+    "county": "Vihiga",
+    "party": "Orange Democratic Movement",
+    "slug": "wilber-ottichilo",
+    "countyCode": "038"
+  },
+  {
+    "fullName": "Kenneth Lusaka",
+    "county": "Bungoma",
+    "party": "Ford Kenya",
+    "slug": "kenneth-lusaka",
+    "countyCode": "039"
+  },
+  {
+    "fullName": "Paul Otuoma",
+    "county": "Busia",
+    "party": "Orange Democratic Movement",
+    "slug": "paul-otuoma",
+    "countyCode": "040"
+  },
+  {
+    "fullName": "James Orengo",
+    "county": "Siaya",
+    "party": "Orange Democratic Movement",
+    "slug": "james-orengo",
+    "countyCode": "041"
+  },
+  {
+    "fullName": "Peter Anyang' Nyong'o",
+    "county": "Kisumu",
+    "party": "Orange Democratic Movement",
+    "slug": "peter-nyongo",
+    "countyCode": "042"
+  },
+  {
+    "fullName": "Gladys Wanga",
+    "county": "Homa Bay",
+    "party": "Orange Democratic Movement",
+    "slug": "gladys-wanga",
+    "countyCode": "043"
+  },
+  {
+    "fullName": "Ochilo Ayacko",
+    "county": "Migori",
+    "party": "Orange Democratic Movement",
+    "slug": "ochilo-ayacko",
+    "countyCode": "044"
+  },
+  {
+    "fullName": "Simba Arati",
+    "county": "Kisii",
+    "party": "Orange Democratic Movement",
+    "slug": "simba-arati",
+    "countyCode": "045"
+  },
+  {
+    "fullName": "Amos Nyaribo",
+    "county": "Nyamira",
+    "party": "United Progressive Alliance",
+    "slug": "amos-nyaribo",
+    "countyCode": "046"
+  },
+  {
+    "fullName": "Johnson Sakaja",
+    "county": "Nairobi City",
+    "party": "United Democratic Alliance",
+    "slug": "johnson-sakaja",
+    "countyCode": "047"
+  }
+]

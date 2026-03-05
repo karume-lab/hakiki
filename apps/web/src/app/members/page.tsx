@@ -11,8 +11,8 @@ import {
 } from "@repo/ui/web/components/ui/select";
 import { cn } from "@repo/ui/web/lib/utils";
 import { Search, SlidersHorizontal, Users, X } from "lucide-react";
+import MemberListingLayout from "@/features/member-listing/components/member-listing-layout";
 import { useMembers } from "@/features/member-listing/hooks/useMembers";
-import MemberListingLayout from "../../features/member-listing/components/mamber-listing-layout";
 import { ROLE_FILTERS, SORT_OPTIONS } from "../../features/member-listing/data";
 
 const Members = () => {
