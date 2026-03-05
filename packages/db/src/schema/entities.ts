@@ -1,3 +1,4 @@
+import { relations } from "drizzle-orm";
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
 export const party = sqliteTable("party", {
@@ -18,7 +19,7 @@ export const constituency = sqliteTable("constituency", {
   updatedAt: integer("updatedAt", { mode: "timestamp" }).notNull(),
 });
 
-export const candidate = sqliteTable("candidate", {
+export const politician = sqliteTable("politician", {
   id: text("id").primaryKey(),
   mzalendoId: text("mzalendo_id").unique(),
   fullName: text("full_name").notNull(),
@@ -49,3 +50,29 @@ export const sourceDocument = sqliteTable("source_document", {
   createdAt: integer("createdAt", { mode: "timestamp" }).notNull(),
   updatedAt: integer("updatedAt", { mode: "timestamp" }).notNull(),
 });
+
+export const politicianRelations = relations(politician, ({ one }) => ({
+  party: one(party, {
+    fields: [politician.partyId],
+    references: [party.id],
+  }),
+  constituency: one(constituency, {
+    fields: [politician.constituencyId],
+    references: [constituency.id],
+  }),
+}));
+
+export const constituencyRelations = relations(constituency, ({ many }) => ({
+  politicians: many(politician),
+}));
+
+export const partyRelations = relations(party, ({ many }) => ({
+  politicians: many(politician),
+}));
+
+export const sourceDocumentRelations = relations(sourceDocument, ({ one }) => ({
+  politician: one(politician, {
+    fields: [sourceDocument.politicianId],
+    references: [politician.id],
+  }),
+}));

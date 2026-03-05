@@ -24,7 +24,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-2 mt-1">
               <Shield className="w-3.5 h-3.5 text-muted-foreground" />
-              <span className="text-[11px] text-muted-foreground uppercase tracking-widest">
+              <span className="text-xs text-muted-foreground uppercase tracking-widest">
                 Independent · Non-partisan
               </span>
             </div>
@@ -80,13 +80,13 @@ const Footer = () => {
           <div className="flex items-center gap-4 shrink-0">
             <Link
               href="/"
-              className="text-[11px] text-muted-foreground hover:text-white transition-colors"
+              className="text-xs text-muted-foreground hover:text-white transition-colors"
             >
               Terms of Use
             </Link>
             <Link
               href="/"
-              className="text-[11px] text-muted-foreground hover:text-white transition-colors"
+              className="text-xs text-muted-foreground hover:text-white transition-colors"
             >
               Privacy Policy
             </Link>
