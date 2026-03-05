@@ -11,22 +11,33 @@ import {
 } from "@repo/ui/web/components/ui/select";
 import { cn } from "@repo/ui/web/lib/utils";
 import { Search, SlidersHorizontal, Users, X } from "lucide-react";
-import MemberListingLayout from "@/features/member-listing/components/member-listing-layout";
-import { useMembers } from "@/features/member-listing/hooks/useMembers";
-import { ROLE_FILTERS, SORT_OPTIONS } from "../../features/member-listing/data";
+import { Suspense } from "react";
+import PoliticianListingLayout from "@/features/politician-listing/components/politician-listing-layout";
+import { SORT_OPTIONS } from "@/features/politician-listing/data";
+import { usePoliticians } from "@/features/politician-listing/hooks/usePoliticians";
 
-const Members = () => {
+const PoliticiansContent = () => {
   const {
-    members,
+    politicians,
     search,
     onSearchChange,
     onSearchClear,
     activeRole,
     onRoleChange,
+    county,
+    onCountyChange,
     sort,
     onSortChange,
     onClearFilters,
-  } = useMembers();
+    filterOptions,
+    hasNextPage,
+    isFetchingNextPage,
+    fetchNextPage,
+    isLoading,
+  } = usePoliticians();
+
+  const roles = filterOptions?.roles || [];
+  const counties = filterOptions?.counties || [];
 
   return (
     <div className="">
@@ -36,7 +47,7 @@ const Members = () => {
           <p className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-1">
             13th Parliament &#183; Kenya
           </p>
-          <h1 className="text-4xl font-bold text-foreground mb-1">Members Directory</h1>
+          <h1 className="text-4xl font-bold text-foreground mb-1">Politicians Directory</h1>
           <p className="text-sm text-muted-foreground">
             Browse, search and filter elected and nominated representatives.
           </p>
@@ -64,11 +75,30 @@ const Members = () => {
               )}
             </div>
 
+            {/* County Filter */}
+            <div className="flex items-center gap-2 text-sm shrink-0">
+              <Select value={county} onValueChange={onCountyChange}>
+                <SelectTrigger className="py-5 w-40 rounded-none border-border bg-background text-foreground text-sm focus:ring-0 focus:ring-offset-0">
+                  <SelectValue placeholder="County" />
+                </SelectTrigger>
+                <SelectContent className="rounded-none border-border">
+                  <SelectItem value="All" className="rounded-none text-sm cursor-pointer">
+                    All Counties
+                  </SelectItem>
+                  {counties.sort().map((c: string) => (
+                    <SelectItem key={c} value={c} className="rounded-none text-sm cursor-pointer">
+                      {c}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
             {/* Sort */}
             <div className="flex items-center gap-2 text-sm shrink-0">
               <SlidersHorizontal className="w-4 h-4 text-muted-foreground" />
-              <Select value={sort} onValueChange={onSortChange}>
-                <SelectTrigger className="py-5 w-28 rounded-none border-border bg-background text-foreground text-sm focus:ring-0 focus:ring-offset-0">
+              <Select value={sort || "name-asc"} onValueChange={onSortChange}>
+                <SelectTrigger className="py-5 w-32 rounded-none border-border bg-background text-foreground text-sm focus:ring-0 focus:ring-offset-0">
                   <SelectValue placeholder="Sort by…" />
                 </SelectTrigger>
                 <SelectContent className="rounded-none border-border">
@@ -89,20 +119,32 @@ const Members = () => {
             <div className="flex items-center gap-1.5 text-sm text-muted-foreground shrink-0 sm:ml-auto">
               <Users className="w-4 h-4" />
               <span>
-                {members.length} member{members.length !== 1 ? "s" : ""}
+                {politicians.length} record{politicians.length !== 1 ? "s" : ""}
               </span>
             </div>
           </div>
 
           {/* Role filter pills */}
           <div className="max-w-7xl mx-auto px-6 pb-3 flex gap-1 flex-wrap">
-            {ROLE_FILTERS.map((f) => {
-              const isActive = activeRole === f.value;
+            <Button
+              size="sm"
+              onClick={() => onRoleChange("All")}
+              className={cn(
+                "px-3 rounded-none py-1 text-xs font-medium uppercase tracking-wide border transition-colors duration-150",
+                activeRole === "All"
+                  ? "bg-foreground text-background border-foreground"
+                  : "bg-transparent text-muted-foreground border-border hover:border-foreground hover:bg-secondary hover:text-secondary-foreground",
+              )}
+            >
+              All Roles
+            </Button>
+            {roles.sort().map((role: string) => {
+              const isActive = activeRole === role;
               return (
                 <Button
-                  key={f.value}
+                  key={role}
                   size="sm"
-                  onClick={() => onRoleChange(f.value)}
+                  onClick={() => onRoleChange(role)}
                   className={cn(
                     "px-3 rounded-none py-1 text-xs font-medium uppercase tracking-wide border transition-colors duration-150",
                     isActive
@@ -110,7 +152,7 @@ const Members = () => {
                       : "bg-transparent text-muted-foreground border-border hover:border-foreground hover:bg-secondary hover:text-secondary-foreground",
                   )}
                 >
-                  {f.label}
+                  {role}
                 </Button>
               );
             })}
@@ -118,9 +160,22 @@ const Members = () => {
         </div>
       </div>
 
-      <MemberListingLayout members={members} onClearFilters={onClearFilters} />
+      <PoliticianListingLayout
+        politicians={politicians}
+        onClearFilters={onClearFilters}
+        isLoading={isLoading}
+        hasNextPage={hasNextPage}
+        isFetchingNextPage={isFetchingNextPage}
+        fetchNextPage={fetchNextPage}
+      />
     </div>
   );
 };
 
-export default Members;
+export default function Politicians() {
+  return (
+    <Suspense fallback={<div className="py-24 text-center">Loading politicians...</div>}>
+      <PoliticiansContent />
+    </Suspense>
+  );
+}

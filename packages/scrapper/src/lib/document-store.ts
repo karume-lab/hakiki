@@ -20,7 +20,7 @@ export class DocumentStore {
     source: string;
     url: string;
     status: string;
-    candidateId?: string;
+    politicianId?: string;
     metadata?: string;
   }) {
     // Check if it exists first to update, or just insert
@@ -33,7 +33,7 @@ export class DocumentStore {
         .update(sourceDocument)
         .set({
           status: data.status,
-          candidateId: data.candidateId,
+          politicianId: data.politicianId,
           metadata: data.metadata,
           updatedAt: new Date(),
         })
@@ -44,7 +44,7 @@ export class DocumentStore {
         source: data.source,
         url: data.url,
         status: data.status,
-        candidateId: data.candidateId,
+        politicianId: data.politicianId,
         metadata: data.metadata,
         createdAt: new Date(),
         updatedAt: new Date(),

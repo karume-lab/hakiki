@@ -1,6 +1,6 @@
 import type { AxiosInstance } from "axios";
 import axios from "axios";
-import { scraperConfig } from "../config";
+import { scraperConfig } from "@/config";
 
 /**
  * HTTP Client Wrapper

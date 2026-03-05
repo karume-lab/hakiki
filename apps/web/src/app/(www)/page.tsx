@@ -2,8 +2,9 @@ import { Button } from "@repo/ui/web/components/ui/button";
 import { Input } from "@repo/ui/web/components/ui/input";
 import { Search } from "lucide-react";
 import HeroBg from "public/hero-bg.jpg";
+import { Suspense } from "react";
 import { ThemeSwitch } from "@/components/common/ThemeSwitch";
-import { MembersSection } from "../../features/member-listing/components/member-section";
+import { PoliticianSection } from "@/features/politician-listing/components/politician-section";
 
 export default function Home() {
   return (
@@ -42,7 +43,13 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <MembersSection />
+        <Suspense
+          fallback={
+            <div className="py-16 text-center text-muted-foreground">Loading politicians...</div>
+          }
+        >
+          <PoliticianSection />
+        </Suspense>
       </main>
     </div>
   );

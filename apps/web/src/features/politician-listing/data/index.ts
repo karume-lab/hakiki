@@ -1,7 +1,7 @@
-import MemberImg from "public/member-removebg-preview.png";
+import PoliticianImg from "public/member-removebg-preview.png";
 
 export type Role = "MNA" | "Woman Rep" | "Nominated" | "Governor" | "Senator";
-export type Member = {
+export type Politician = {
   id: number;
   name: string;
   constituency: string;
@@ -27,14 +27,14 @@ export const SORT_OPTIONS = [
 ];
 export type SortOption = (typeof SORT_OPTIONS)[number]["value"];
 
-export const ALL_MEMBERS: Member[] = [
+export const ALL_POLITICIANS: Politician[] = [
   {
     id: 1,
     name: "Abdi Ali",
     constituency: "Ijara",
     county: "Garissa",
     role: "MNA",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Voi",
     county: "Taita",
     role: "MNA",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 3,
@@ -50,7 +50,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Balambala",
     county: "Garissa",
     role: "MNA",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 4,
@@ -58,7 +58,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Lagdera",
     county: "Garissa",
     role: "MNA",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 5,
@@ -66,7 +66,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Mandera East",
     county: "Mandera",
     role: "MNA",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 6,
@@ -74,7 +74,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Lafey",
     county: "Mandera",
     role: "MNA",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 7,
@@ -82,7 +82,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "North Imenti",
     county: "Meru",
     role: "MNA",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 8,
@@ -90,7 +90,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Nationwide",
     county: "—",
     role: "Nominated",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 9,
@@ -98,7 +98,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Rongo",
     county: "Migori",
     role: "MNA",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 10,
@@ -106,7 +106,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Vihiga",
     county: "Vihiga",
     role: "Woman Rep",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 11,
@@ -114,7 +114,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Mandera West",
     county: "Mandera",
     role: "MNA",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 12,
@@ -122,7 +122,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "North Horr",
     county: "Marsabit",
     role: "MNA",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 13,
@@ -130,7 +130,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Nairobi West",
     county: "Nairobi",
     role: "Woman Rep",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 14,
@@ -138,7 +138,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Wajir East",
     county: "Wajir",
     role: "MNA",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 15,
@@ -146,7 +146,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Kiambu",
     county: "Kiambu",
     role: "Woman Rep",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 16,
@@ -154,7 +154,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Kipipiri",
     county: "Nyandarua",
     role: "MNA",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 17,
@@ -162,7 +162,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Kirinyaga",
     county: "Kirinyaga",
     role: "Governor",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 18,
@@ -170,7 +170,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Mombasa",
     county: "Mombasa",
     role: "Governor",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 19,
@@ -178,7 +178,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Homabay",
     county: "Homabay",
     role: "Governor",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 20,
@@ -186,7 +186,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Nakuru",
     county: "Nakuru",
     role: "Governor",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 21,
@@ -194,7 +194,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Kericho",
     county: "Kericho",
     role: "Senator",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 22,
@@ -202,7 +202,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Isiolo",
     county: "Isiolo",
     role: "Senator",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 23,
@@ -210,7 +210,7 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Homabay",
     county: "Homabay",
     role: "Senator",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
   {
     id: 24,
@@ -218,6 +218,6 @@ export const ALL_MEMBERS: Member[] = [
     constituency: "Kitui",
     county: "Kitui",
     role: "Senator",
-    imageUrl: MemberImg.src,
+    imageUrl: PoliticianImg.src,
   },
 ];

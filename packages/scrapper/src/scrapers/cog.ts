@@ -1,5 +1,5 @@
-import { DbSync } from "../lib/db-sync";
-import { DocumentStore } from "../lib/document-store";
+import { DbSync } from "@/lib/db-sync";
+import { DocumentStore } from "@/lib/document-store";
 import governorsSeed from "./governors-seed.json";
 
 interface GovernorRecord {
@@ -51,8 +51,8 @@ export class CogScraper {
       // For governors, constituency name = county name
       const constituencyId = await this.dbSync.upsertConstituency(gov.county, gov.county);
 
-      // 3. Upsert Candidate
-      const candidateId = await this.dbSync.upsertCandidate({
+      // 3. Upsert Politician
+      const politicianId = await this.dbSync.upsertPolitician({
         mzalendoId: gov.slug,
         fullName: gov.fullName,
         partyId,
@@ -65,7 +65,7 @@ export class CogScraper {
         source: "COG_Seed",
         url: sourceUrl,
         status: "parsed",
-        candidateId,
+        politicianId,
       });
     } catch (error) {
       console.error(`Failed to sync governor ${gov.fullName}:`, error);
