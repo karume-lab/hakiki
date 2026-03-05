@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@repo/ui/web/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";

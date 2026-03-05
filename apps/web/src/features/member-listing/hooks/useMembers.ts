@@ -1,24 +1,16 @@
+"use client";
+
 import { parseAsString, useQueryState } from "nuqs";
 import { useMemo } from "react";
 import type { Role, SortOption } from "../data";
 import { ALL_MEMBERS } from "../data";
 
-
 export const useMembers = () => {
-  const [search, setSearch] = useQueryState(
-    "search",
-    parseAsString.withDefault("").withOptions({ clearOnDefault: true }),
-  );
+  const [search, setSearch] = useQueryState("search", parseAsString.withDefault(""));
 
-  const [activeRole, setActiveRole] = useQueryState(
-    "role",
-    parseAsString.withDefault("All").withOptions({ clearOnDefault: true }),
-  );
+  const [activeRole, setActiveRole] = useQueryState("role", parseAsString.withDefault("All"));
 
-  const [sort, setSort] = useQueryState(
-    "sort",
-    parseAsString.withDefault("name-asc").withOptions({ clearOnDefault: true }),
-  );
+  const [sort, setSort] = useQueryState("sort", parseAsString.withDefault("name-asc"));
 
   const members = useMemo(() => {
     let result = [...ALL_MEMBERS];
