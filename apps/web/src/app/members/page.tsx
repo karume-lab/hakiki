@@ -16,7 +16,18 @@ import { useMembers } from "@/features/member-listing/hooks/useMembers";
 import { ROLE_FILTERS, SORT_OPTIONS } from "../../features/member-listing/data";
 
 const Members = () => {
-  const { members, search, onSearchClear, activeRole, sort, onClearFilters } = useMembers();
+  const {
+    members,
+    search,
+    onSearchChange,
+    onSearchClear,
+    activeRole,
+    onRoleChange,
+    sort,
+    onSortChange,
+    onClearFilters,
+  } = useMembers();
+
   return (
     <div className="">
       {/* ── Page header ── */}
@@ -36,8 +47,8 @@ const Members = () => {
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
               <Input
-                // value={search}
-                // onChange={(e) => onSearchChange?.(e.target.value)}
+                value={search}
+                onChange={(e) => onSearchChange(e.target.value)}
                 type="text"
                 placeholder="Search by name, county, constituency…"
                 className="pl-9 pr-9 rounded-none h-10 text-sm focus-visible:ring-0 bg-background"
@@ -56,10 +67,7 @@ const Members = () => {
             {/* Sort */}
             <div className="flex items-center gap-2 text-sm shrink-0">
               <SlidersHorizontal className="w-4 h-4 text-muted-foreground" />
-              <Select
-                value={sort}
-                // onValueChange={(value) => onSortChange?.(value)}
-              >
+              <Select value={sort} onValueChange={onSortChange}>
                 <SelectTrigger className="py-5 w-28 rounded-none border-border bg-background text-foreground text-sm focus:ring-0 focus:ring-offset-0">
                   <SelectValue placeholder="Sort by…" />
                 </SelectTrigger>
@@ -94,7 +102,7 @@ const Members = () => {
                 <Button
                   key={f.value}
                   size="sm"
-                  // onClick={() => onRoleChange?.(f.value as Role | "All")}
+                  onClick={() => onRoleChange(f.value)}
                   className={cn(
                     "px-3 rounded-none py-1 text-xs font-medium uppercase tracking-wide border transition-colors duration-150",
                     isActive

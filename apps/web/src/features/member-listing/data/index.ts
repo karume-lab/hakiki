@@ -25,6 +25,7 @@ export const SORT_OPTIONS = [
   { label: "Constituency", value: "constituency" },
   { label: "County", value: "county" },
 ];
+export type SortOption = (typeof SORT_OPTIONS)[number]["value"];
 
 export const ALL_MEMBERS: Member[] = [
   {

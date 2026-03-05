@@ -4,6 +4,7 @@ import "@repo/ui/web/globals.css";
 import { Toaster } from "@repo/ui/web/components/ui/sonner";
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, DM_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { QueryProvider } from "@/components/providers/QueryProvider";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
@@ -44,7 +45,9 @@ export default function RootLayout({
         >
           <QueryProvider>
             <SEOConfig />
-            <RootProvider>{children}</RootProvider>
+            <RootProvider>
+              <NuqsAdapter>{children}</NuqsAdapter>
+            </RootProvider>
             <Toaster richColors />
           </QueryProvider>
         </ThemeProvider>
