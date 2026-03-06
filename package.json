@@ -68,8 +68,10 @@
     "@types/react": "~19.1.10"
   },
   "trustedDependencies": [
+    "@prisma/engines",
     "esbuild",
     "lefthook",
-    "msw"
+    "msw",
+    "prisma"
   ]
 }
